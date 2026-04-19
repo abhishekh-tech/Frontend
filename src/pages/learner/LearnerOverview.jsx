@@ -36,10 +36,8 @@ const LearnerOverview = () => {
     setLoading(true);
     try {
       const [enrollRes, coursesRes] = await Promise.all([
-      const [enrollRes, coursesRes] = await Promise.all([
         fetchWithAuth('/enrollments'),
         fetchWithAuth('/courses'),
-      ]);
       ]);
       const [enrollData, coursesData] = await Promise.all([
         enrollRes.json(),
